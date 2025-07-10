@@ -1,0 +1,459 @@
+/* Reset e Variáveis */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --verde-primario: #2e7d32;
+            --verde-secundario: #4caf50;
+            --marrom-terroso: #5d4037;
+            --bege-claro: #f5f5f1;
+            --branco: #ffffff;
+            --texto-escuro: #333333;
+            --texto-cinza: #666666;
+            --fonte-titulo: 'Montserrat', sans-serif;
+            --fonte-texto: 'Open Sans', sans-serif;
+            --sombra: 0 4px 8px rgba(0,0,0,0.1);
+            --raio-borda: 12px;
+        }
+        
+        body {
+            font-family: var(--fonte-texto);
+            color: var(--texto-escuro);
+            background-color: var(--bege-claro);
+            line-height: 1.6;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--branco);
+            box-shadow: var(--sombra);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 1rem 0;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+        }
+        
+        .logo-texto {
+            font-family: var(--fonte-titulo);
+            font-weight: 700;
+            color: var(--verde-primario);
+            font-size: 1.5rem;
+        }
+        
+        /* Banner Hero */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('img/IMG_20200328_171023929_HDR.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-family: var(--fonte-titulo);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .botao {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--verde-primario);
+            color: var(--branco);
+            border-radius: var(--raio-borda);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        
+        .botao:hover {
+            border-color: var(--branco);
+        }
+        
+        /* Seção Agricultura Sustentável */
+        .agricultura {
+            padding: 4rem 0;
+            background-color: var(--branco);
+        }
+        
+        .agricultura .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .agricultura img {
+            width: 100%;
+            border-radius: var(--raio-borda);
+            box-shadow: var(--sombra);
+        }
+        
+        .agricultura h2 {
+            font-size: 2.5rem;
+            color: var(--verde-primario);
+            margin-bottom: 1.5rem;
+            font-family: var(--fonte-titulo);
+        }
+        
+        /* Seção Produtos */
+        .produtos {
+            padding: 4rem 0;
+            background-color: var(--bege-claro);
+        }
+        
+        .produtos h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--verde-primario);
+            margin-bottom: 3rem;
+            font-family: var(--fonte-titulo);
+        }
+        
+        .categorias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .categoria {
+            background-color: var(--branco);
+            border-radius: var(--raio-borda);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: transform 0.3s;
+        }
+        
+        .categoria:hover {
+            transform: translateY(-10px);
+        }
+        
+        .categoria img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .categoria-conteudo {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .categoria-conteudo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--marrom-terroso);
+            font-family: var(--fonte-titulo);
+        }
+        
+        .botao-categoria {
+            background-color: var(--verde-secundario);
+            margin-top: 1rem;
+        }
+        
+        .botao-categoria:hover {
+            background-color: var(--verde-primario);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--marrom-terroso);
+            color: var(--branco);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-conteudo {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .redes-sociais a {
+            color: var(--branco);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .redes-sociais a:hover {
+            color: var(--verde-secundario);
+        }
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .agricultura .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .agricultura img {
+                order: -1;
+            }
+            
+            .categorias {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
+
+
+
+
+        /* css nova pagina*/
+         .cabecalho-categoria {
+            background-color: var(--branco);
+            box-shadow: var(--sombra);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .cabecalho-categoria .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .botao-voltar {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: var(--verde-primario);
+            color: var(--branco);
+            border-radius: var(--raio-borda);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .botao-voltar:hover {
+            background-color: var(--verde-secundario);
+        }
+        
+        /* Banner da Categoria */
+        .banner-categoria {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+            /*Foto super larga e baixinha (tipo banner), mostrando um monte de fruta, verdura e legume orgânico bem fresquinho. Quero aquela aparência de feira natural: cores vivas, gotinha de água brilhando nas folhas, textura da casca dos legumes visível. Fundo branco liso ou de madeira clara bem simples.*/
+                        url('img/banner.jpg');
+            background-size: cover;
+            background-position: center;
+            color: var(--branco);
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .banner-categoria h1 {
+            font-size: 2.5rem;
+            font-family: var(--fonte-titulo);
+            margin-bottom: 1rem;
+        }
+        
+        /* Cards de Produtores */
+        .produtores {
+            padding: 2rem 0 4rem;
+        }
+        
+        .produtores h2 {
+            text-align: center;
+            font-size: 2rem;
+            color: var(--verde-primario);
+            margin-bottom: 2rem;
+            font-family: var(--fonte-titulo);
+        }
+        
+        .lista-produtores {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .card-produtor {
+            background-color: var(--branco);
+            border-radius: var(--raio-borda);
+            overflow: hidden;
+            box-shadow: var(--sombra);
+            transition: transform 0.3s;
+        }
+        
+        .card-produtor:hover {
+            transform: translateY(-5px);
+        }
+        
+        .produtor-imagens {
+            display: flex;
+            height: 200px;
+        }
+        
+        .produtor-imagens img {
+            width: 50%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .produtor-conteudo {
+            padding: 1.5rem;
+        }
+        
+        .produtor-nome {
+            font-size: 1.5rem;
+            color: var(--marrom-terroso);
+            margin-bottom: 1rem;
+            font-family: var(--fonte-titulo);
+        }
+        
+        .produtor-itens {
+            margin: 1.5rem 0;
+        }
+        
+        .produtor-itens h3 {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--verde-primario);
+        }
+        
+        .produtor-itens ul {
+            list-style-position: inside;
+            color: var(--texto-cinza);
+        }
+        
+        .produtor-itens li {
+            margin-bottom: 0.3rem;
+        }
+        
+        .produtor-contato {
+            margin-top: 1.5rem;
+        }
+        
+        .produtor-contato a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: #25D366; /* Verde WhatsApp */
+            color: white;
+            border-radius: var(--raio-borda);
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .produtor-contato a:hover {
+            background-color: #128C7E;
+        }
+        
+        /* Footer (mesmo da página principal) */
+        footer {
+            background-color: var(--marrom-terroso);
+            color: var(--branco);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-conteudo {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .redes-sociais {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+        
+        .redes-sociais a {
+            color: var(--branco);
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .redes-sociais a:hover {
+            color: var(--verde-secundario);
+        }
+
+        
+
+
+.footer-contato-produtores {
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.whatsapp-btn {
+  display: inline-block;
+  background-color: #25D366;
+ 
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.whatsapp-btn:hover {
+  background-color: #128C7E;
+}
+
+.observacao {
+  font-size: 0.8em;
+  color: #666;
+}
+        
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .banner-categoria h1 {
+                font-size: 2rem;
+            }
+            
+            .lista-produtores {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+        }
